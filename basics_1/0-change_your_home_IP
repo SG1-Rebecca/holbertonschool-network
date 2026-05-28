@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Change the home IP
+# Resolve localhost to 127.0.0.2
+sed -i '/localhost/d' /etc/hosts # Remove any existing 'localhost' entry
+echo "127.0.0.2 localhost" | tee -a /etc/hosts # Add new mapping for localhost
+
+# Resolve facebook.com to 8.8.8.8
+sed -i '/facebook.com/d' /etc/hosts # Remove any existing 'facebook.com' entry
+echo "8.8.8.8 facebook.com" | tee -a /etc/hosts # Add new mapping for facebook.com
